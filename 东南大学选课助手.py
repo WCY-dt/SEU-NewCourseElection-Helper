@@ -159,7 +159,7 @@ def main():
                                         '/html/body/div[3]/div/div[3]/button[2]').click()
                                 except Exception as eEle:
                                     elected=True
-                                time.sleep(2)
+                                time.sleep(3)
                                 
                             
                             print("\nelected!\n")
@@ -232,7 +232,7 @@ def main():
                                         '/html/body/div[3]/div/div[3]/button[2]').click()
                                 except Exception as eEle:
                                     elected=True
-                                time.sleep(2)
+                                time.sleep(3)
                                 
                             
                             print("\nelected!\n")
@@ -298,7 +298,7 @@ def main():
                                 '/html/body/div[3]/div/div[3]/button[2]').click()
                         except Exception as eEle:
                             elected=True
-                        time.sleep(2)
+                        time.sleep(3)
                         
                     
                     print("\nelected!\n")
