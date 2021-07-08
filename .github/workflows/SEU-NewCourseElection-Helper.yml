@@ -1,4 +1,7 @@
 name: SEU-NewCourseElection-Helper
+on:
+  watch:
+    types: started
 
 jobs:
   Grab:
