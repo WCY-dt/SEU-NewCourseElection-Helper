@@ -94,7 +94,7 @@ def Login():
         return
 
     except Exception as e:
-        print('\tlogin fail' + '\n' + str(e))
+        print('\tlogin fail')
         error = True
         return
 
@@ -323,7 +323,7 @@ def main():
         return
 
     except Exception as e:
-        print('\tterminated' + '\n' + str(e))
+        print('\tterminated')
         error = True
         return
 
@@ -349,7 +349,7 @@ if __name__ == '__main__':
     else:
         sys.exit()
 
-    time.sleep(60)
+    time.sleep(10)
     error = False
     Login()
     if not error:

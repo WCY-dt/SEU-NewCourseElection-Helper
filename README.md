@@ -25,7 +25,7 @@
 ## 在线版使用步骤
 
 1. 点击右上角的 fork，把本仓库 fork 走。（如果在这之前能点一个star我会很感激~）
-2. 如下图所示，一次点击 settings，secrets，new repository secret按钮
+2. 如下图所示，依次点击 settings，secrets，new repository secret按钮
 
 ![image-20210708215628085](pic/image-20210708215628085.png)
 
