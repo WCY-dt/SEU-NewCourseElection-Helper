@@ -14,6 +14,23 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 
+def pwd_input(): # 密码输入
+    chars = []   
+    while True:  
+        newChar = msvcrt.getch().decode(encoding="utf-8")
+        if newChar in '\r\n':             
+             break   
+        elif newChar == '\b':
+             if chars:    
+                 del chars[-1]   
+                 msvcrt.putch('\b'.encode(encoding='utf-8'))
+                 msvcrt.putch( ' '.encode(encoding='utf-8'))
+                 msvcrt.putch('\b'.encode(encoding='utf-8'))                
+        else:  
+            chars.append(newChar)  
+            msvcrt.putch('*'.encode(encoding='utf-8'))
+    return (''.join(chars) )
+
 
 def Login(): # 登录
     global t
@@ -23,8 +40,6 @@ def Login(): # 登录
     global password
     global teacher
     global driver
-    global class_wanted
-    global elecTurn
 
     try:
         # 启动浏览器
@@ -33,12 +48,26 @@ def Login(): # 登录
         driver.set_window_size(500, 10000)
         url = "http://newxk.urp.seu.edu.cn/xsxk/profile/index.html"
         driver.get(url)
-        
+        os.system('cls')
         print("开始登录\n")
 
-        print("\n登陆中，请稍后.", end="")
-        successLogin=False
-        LoginTurn=1
+        username = input("用户名：")
+        print("密  码：",end="")
+        password = pwd_input()
+        print()
+
+        # 截取验证码
+        # verifycodepic = driver.find_element_by_xpath('//*[@id="vcodeImg"]')
+        # location = verifycodepic.location
+        # size = verifycodepic.size
+        # print(location, size)
+        screenshot = driver.get_screenshot_as_file('verficode.png')
+        imgOrigin = Image.open('verficode.png')
+        img=imgOrigin.crop((315,332,315+129,332+42))
+        img.show()
+
+        verifycode = input("验证码：")
+        os.remove('verficode.png')
 
         # 模拟输入与点击
         driver.find_element_by_xpath(
@@ -49,27 +78,21 @@ def Login(): # 登录
             '//*[@id="loginPwdDiv"]/div/input').click()
         driver.find_element_by_xpath(
             '//*[@id="loginPwdDiv"]/div/input').send_keys(password)
+        driver.find_element_by_xpath(
+            '//*[@id="verifyCode"]').click()
+        driver.find_element_by_xpath(
+            '//*[@id="verifyCode"]').send_keys(verifycode)
 
-        while not successLogin:
-            driver.find_element_by_xpath(
-                '//*[@id="verifyCode"]').click()
-            driver.find_element_by_xpath(
-                '//*[@id="verifyCode"]').send_keys(str(0))
-            driver.find_element_by_xpath('//*[@id="loginDiv"]/button').click()
-            print(".", end="")
-            time.sleep(1)
-            try:
-                driver.find_element_by_xpath(
-                    '//*[@id="xsxkapp"]/div[4]/div/div[2]/div/table/tbody/tr['+str(elecTurn)+']/td/div/div/div[6]/div[2]/label/span[1]/span').click()
-                successLogin=True
-            except Exception as eLogin:
-                successLogin=False
-                print(".", end="")
-                LoginTurn=LoginTurn+1
-                time.sleep(1)
+        print("\n登陆中，请稍后.", end="")
 
         time.sleep(1)
-        
+        driver.find_element_by_xpath('//*[@id="loginDiv"]/button').click()
+        print(".", end="")
+
+        time.sleep(2)
+        elecTurn=input("\n\n选课轮次：")
+        driver.find_element_by_xpath(
+            '//*[@id="xsxkapp"]/div[4]/div/div[2]/div/table/tbody/tr['+str(elecTurn)+']/td/div/div/div[6]/div[2]/label/span[1]/span').click()
         print(".", end="")
 
         time.sleep(1)
@@ -94,7 +117,7 @@ def Login(): # 登录
             # driver.quit()
             return
         
-        
+        os.system('cls')
 
         print("成功登录!\n")
         return
@@ -110,6 +133,8 @@ def Login(): # 登录
 def main():
 
     try:
+        class_wanted = input("输入课程号：")
+
         finded = False
         # screenshot = driver.get_screenshot_as_file('a.png')
         # img = Image.open('a.png')
@@ -180,8 +205,8 @@ def main():
                                 except Exception as eEle:
                                     elected=True
                                 time.sleep(2)
-                                
-                            
+                                os.system('cls')
+                            os.system('cls')
                             print("\n已成功选上！\n")
                             break
                     break
@@ -264,8 +289,8 @@ def main():
                                 except Exception as eEle:
                                     elected=True
                                 time.sleep(2)
-                                
-                            
+                                os.system('cls')
+                            os.system('cls')
                             print("\n已成功选上！\n")
                             break
                     break
@@ -338,8 +363,8 @@ def main():
                         except Exception as eEle:
                             elected=True
                         time.sleep(2)
-                        
-                    
+                        os.system('cls')
+                    os.system('cls')
                     print("\n已成功选上！\n")
                     break
             if not finded:
@@ -370,26 +395,6 @@ def main():
 
 
 if __name__ == '__main__':
-    if "NAME" in os.environ:
-        username = os.environ["ID"]
-    else:
-        sys.exit()
-
-    if "PASSWORD" in os.environ:
-        password = os.environ["PASSWORD"]
-    else:
-        sys.exit() 
-
-    if "TURN" in os.environ:
-        elecTurn = os.environ["TURN"]
-    else:
-        elecTurn = "1"
-
-    if "CLASS" in os.environ:
-        class_wanted = os.environ["CLASS"]
-    else:
-        sys.exit()
-
     error = False
     Login()
     if not error:

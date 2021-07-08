@@ -16,6 +16,7 @@ jobs:
         NAME: ${{ secrets.NAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
         TURN: ${{ secrets.TURN }}
+        CLASS: ${{ secrets.class }}
       run: |
         bash Init_Building_Dependencies.sh
         python3 东南大学选课助手.py

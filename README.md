@@ -3,8 +3,6 @@
 ![Stars](https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg)
 ![Forks](https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg)
 
-# 注意！！！exe由于必要组件没有打包进来，如果电脑上没有chrome driver的可能无法正常运行！！！（有时间就来改
-
 脚本共有两个版本
 
 - ~~在线版（利用GitHub workflow）~~开发中
