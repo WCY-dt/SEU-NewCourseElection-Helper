@@ -370,7 +370,7 @@ def main():
 
 if __name__ == '__main__':
     if "NAME" in os.environ:
-        username = os.environ["ID"]
+        username = os.environ["NAME"]
     else:
         sys.exit()
 
