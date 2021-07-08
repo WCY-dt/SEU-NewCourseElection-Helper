@@ -16,7 +16,6 @@ chrome_options.add_argument('--no-sandbox')
 
 def Login(): # 登录
     global t
-    global msg
     global error
     global username
     global password
@@ -88,7 +87,6 @@ def Login(): # 登录
         print("\n"+checkUrl+"\n")
         if not checkUrl.startswith("http://newxk.urp.seu.edu.cn/xsxk/elective/"):
             print(username + '\t' + password + '\t登录失败')
-            msg += username + '\t' + password + '\t登录失败\n\n'
             error = True
             # driver.quit()
             return
@@ -99,7 +97,6 @@ def Login(): # 登录
         return
 
     except Exception as e:
-        msg += '登录失败' + '\n\n' + str(e) + '\n\n'
         print('\t登录失败' + '\n' + str(e))
         error = True
         # driver.quit()
