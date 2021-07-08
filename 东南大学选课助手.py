@@ -154,11 +154,11 @@ def main():
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
-                                try:
-                                    driver.find_element_by_xpath(
-                                        '/html/body/div[3]/div/div[3]/button[2]').click()
-                                except Exception as eEle:
+                                if not driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？":
                                     elected=True
+                                    break
+                                driver.find_element_by_xpath(
+                                    '/html/body/div[3]/div/div[3]/button[2]').click()
                                 time.sleep(3)
                                 
                             
@@ -227,11 +227,11 @@ def main():
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
-                                try:
-                                    driver.find_element_by_xpath(
-                                        '/html/body/div[3]/div/div[3]/button[2]').click()
-                                except Exception as eEle:
+                                if not driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？":
                                     elected=True
+                                    break
+                                driver.find_element_by_xpath(
+                                    '/html/body/div[3]/div/div[3]/button[2]').click()
                                 time.sleep(3)
                                 
                             
@@ -293,12 +293,13 @@ def main():
                         Turn=Turn+1
                         tl.find_element_by_xpath(
                             './/*[@class="el-row"]/button[3]').click()
-                        try:
-                            driver.find_element_by_xpath(
-                                '/html/body/div[3]/div/div[3]/button[2]').click()
-                        except Exception as eEle:
+                        if not driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？":
                             elected=True
+                            break
+                        driver.find_element_by_xpath(
+                            '/html/body/div[3]/div/div[3]/button[2]').click()
                         time.sleep(3)
+                                
                         
                     
                     print("\nelected!\n")
