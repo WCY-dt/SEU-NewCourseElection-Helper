@@ -14,7 +14,7 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 
 
-def Login(): # 登录
+def Login():
     global t
     global error
     global username
@@ -25,20 +25,18 @@ def Login(): # 登录
     global elecTurn
 
     try:
-        # 启动浏览器
         driver = webdriver.Chrome(executable_path='chromedriver', chrome_options=chrome_options)
         driver.maximize_window()
         driver.set_window_size(500, 10000)
         url = "http://newxk.urp.seu.edu.cn/xsxk/profile/index.html"
         driver.get(url)
         
-        print("开始登录\n")
+        print("start to login\n")
 
-        print("\n登陆中，请稍后.", end="")
+        print("\nplease wait.", end="")
         successLogin=False
         LoginTurn=1
 
-        # 模拟输入与点击
         driver.find_element_by_xpath(
             '//*[@id="loginNameDiv"]/div/input').click()
         driver.find_element_by_xpath(
@@ -86,20 +84,18 @@ def Login(): # 登录
         checkUrl = driver.current_url
         print("\n"+checkUrl+"\n")
         if not checkUrl.startswith("http://newxk.urp.seu.edu.cn/xsxk/elective/"):
-            print(username + '\t' + password + '\t登录失败')
+            print(username + '\t' + password + '\tlogin fail')
             error = True
-            # driver.quit()
             return
         
         
 
-        print("成功登录!\n")
+        print("login successfully!\n")
         return
 
     except Exception as e:
-        print('\t登录失败' + '\n' + str(e))
+        print('\tlogin fail' + '\n' + str(e))
         error = True
-        # driver.quit()
         return
 
 
@@ -107,12 +103,8 @@ def main():
 
     try:
         finded = False
-        # screenshot = driver.get_screenshot_as_file('a.png')
-        # img = Image.open('a.png')
-        # img.show()
-        print("查找中.", end="")
+        print("finding.", end="")
 
-        # 系统推荐课程
 
         driver.find_element_by_xpath('//*[@id="xsxkapp"]/div/div[1]/ul/li[1]/i').click()
         time.sleep(0.5)
@@ -134,39 +126,31 @@ def main():
         time.sleep(1)
         print(".", end="")
         pages = driver.find_element_by_class_name('number.active').text
-        # print("查找第"+pages+"页\n")
 
         while str(pages) == str(curpages) and not finded:
             class_list = driver.find_elements_by_xpath(
                 '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[1]/div')
-            # print("classlist:")
-            # print(class_list)
-            # print("\n")
             for cl in class_list:
                 class_num = cl.find_element_by_xpath(
                     './/*[@class="el-card__body"]/div[2]/div/div[2]/span').text
-                # print("即将查找"+class_wanted[0:-6]+"课程\n")
                 print(".", end="")
                 if class_wanted[0:-5] == class_num:
-                    # print("查找到"+class_wanted[0:-6]+"课程\n")
                     cl.click()
                     time.sleep(0.2)
                     print(".", end="")
                     teacher_list=cl.find_elements_by_xpath(
                         './/*[@class="card-list course-jxb el-row"]/div')
-                    # print("即将查找课程号"+class_wanted[-3:-1])
                     for tl in teacher_list:
                         print(".", end="")
                         teacher_num=tl.find_element_by_xpath(
                             './/*[@class="card-item head"]/div[1]/span[1]').text
-                        # print("正在查找课程号"+teacher_num[1:3])
                         if class_wanted[-3:-1]==teacher_num[1:3]:
-                            print("\n\n已找到\n")
+                            print("\n\nfinded\n")
                             finded = True
                             Turn=1
                             elected=False
                             while not elected:
-                                print("第"+str(Turn)+"次尝试")
+                                print("the "+str(Turn)+" trail")
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
@@ -178,7 +162,7 @@ def main():
                                 time.sleep(2)
                                 
                             
-                            print("\n已成功选上！\n")
+                            print("\nelected!\n")
                             break
                     break
             if not finded:
@@ -194,9 +178,6 @@ def main():
                 time.sleep(1)
                 print(".", end="")
                 pages = driver.find_element_by_class_name('number.active').text
-                # print("查找第"+pages+"页\n")
-
-        # 体育项目
 
         driver.find_element_by_xpath('//*[@id="xsxkapp"]/div/div[1]/ul/li[1]/i').click()
         time.sleep(0.5)
@@ -218,39 +199,31 @@ def main():
         time.sleep(1)
         print(".", end="")
         pages = driver.find_element_by_class_name('number.active').text
-        # print("查找第"+pages+"页\n")
 
         while str(pages) == str(curpages) and not finded:
             class_list = driver.find_elements_by_xpath(
                 '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[1]/div')
-            # print("classlist:")
-            # print(class_list)
-            # print("\n")
             for cl in class_list:
                 class_num = cl.find_element_by_xpath(
                     './/*[@class="el-card__body"]/div[2]/div/div[2]/span').text
-                # print("即将查找"+class_wanted[0:-6]+"课程\n")
                 print(".", end="")
                 if class_wanted[0:-5] == class_num:
-                    # print("查找到"+class_wanted[0:-6]+"课程\n")
                     cl.click()
                     time.sleep(0.2)
                     print(".", end="")
                     teacher_list=cl.find_elements_by_xpath(
                         './/*[@class="card-list course-jxb el-row"]/div')
-                    # print("即将查找课程号"+class_wanted[-3:-1])
                     for tl in teacher_list:
                         print(".", end="")
                         teacher_num=tl.find_element_by_xpath(
                             './/*[@class="card-item head"]/div[1]/span[1]').text
-                        # print("正在查找课程号"+teacher_num[1:3])
                         if class_wanted[-3:-1]==teacher_num[1:3]:
-                            print("\n\n已找到\n")
+                            print("\n\nfinded\n")
                             finded = True
                             Turn=1
                             elected=False
                             while not elected:
-                                print("第"+str(Turn)+"次尝试")
+                                print("the "+str(Turn)+" trail")
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
@@ -262,7 +235,7 @@ def main():
                                 time.sleep(2)
                                 
                             
-                            print("\n已成功选上！\n")
+                            print("\nelected!\n")
                             break
                     break
             if not finded:
@@ -278,9 +251,6 @@ def main():
                 time.sleep(1)
                 print(".", end="")
                 pages = driver.find_element_by_class_name('number.active').text
-                # print("查找第"+pages+"页\n")
-        
-        # 通选课
 
         driver.find_element_by_xpath('//*[@id="xsxkapp"]/div/div[1]/ul/li[1]/i').click()
         time.sleep(0.5)
@@ -302,29 +272,24 @@ def main():
         time.sleep(1)
         print(".", end="")
         pages = driver.find_element_by_class_name('number.active').text
-        # print("查找第"+pages+"页\n")
 
         while str(pages) == str(curpages) and not finded:
             class_list = driver.find_elements_by_xpath(
                 '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[1]/div')
-            # print("classlist:")
-            # print(class_list)
-            # print("\n")
             for cl in class_list:
                 class_num = cl.find_element_by_xpath(
                     './/*[@class="el-card__body"]/div[2]/div/div[2]/span[1]').text\
                     + " "\
                     + cl.find_element_by_xpath(
                     './/*[@class="el-card__body"]/div[2]/div/div[2]/span[2]').text
-                # print("查找到"+class_num+"课程\n")
                 print(".", end="")
                 if class_wanted == class_num:
-                    print("\n\n已找到\n")
+                    print("\n\nfinded\n")
                     finded = True
                     Turn=1
                     elected=False
                     while not elected:
-                        print("第"+str(Turn)+"次尝试")
+                        print("the "+str(Turn)+" trail")
                         Turn=Turn+1
                         tl.find_element_by_xpath(
                             './/*[@class="el-row"]/button[3]').click()
@@ -336,7 +301,7 @@ def main():
                         time.sleep(2)
                         
                     
-                    print("\n已成功选上！\n")
+                    print("\nelected!\n")
                     break
             if not finded:
                 curpages = curpages+1
@@ -351,17 +316,15 @@ def main():
                 time.sleep(1)
                 print(".", end="")
                 pages = driver.find_element_by_class_name('number.active').text
-                # print("查找第"+pages+"页\n")
 
         if not finded:
-            print("\n\n没找到!\n")
+            print("\n\nnot finded!\n")
 
         return
 
     except Exception as e:
-        print('\t选课中止' + '\n' + str(e))
+        print('\tterminated' + '\n' + str(e))
         error = True
-        # driver.quit()
         return
 
 
@@ -386,7 +349,7 @@ if __name__ == '__main__':
     else:
         sys.exit()
 
-    time.sleep(120)
+    time.sleep(60)
     error = False
     Login()
     if not error:
