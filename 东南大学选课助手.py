@@ -386,6 +386,7 @@ if __name__ == '__main__':
     else:
         sys.exit()
 
+    time.sleep(120)
     error = False
     Login()
     if not error:
