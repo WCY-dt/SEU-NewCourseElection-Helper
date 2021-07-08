@@ -1,0 +1,21 @@
+name: SEU-NewCourseElection-Helper
+
+jobs:
+  Grab:
+    runs-on: windows-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+    - name: Run
+      env:
+        NAME: ${{ secrets.NAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        TURN: ${{ secrets.TURN }}
+      run: |
+        bash Init_Building_Dependencies.sh
+        python3 东南大学选课助手.py

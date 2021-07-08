@@ -90,8 +90,9 @@ def Login(): # 登录
         print(".", end="")
 
         time.sleep(2)
+        elecTurn=input("\n\n选课轮次：")
         driver.find_element_by_xpath(
-            '//*[@id="xsxkapp"]/div[4]/div/div[2]/div/table/tbody/tr[3]/td/div/div/div[6]/div[2]/label/span[1]/span').click()
+            '//*[@id="xsxkapp"]/div[4]/div/div[2]/div/table/tbody/tr['+str(elecTurn)+']/td/div/div/div[6]/div[2]/label/span[1]/span').click()
         print(".", end="")
 
         time.sleep(1)
@@ -191,6 +192,22 @@ def main():
                         if class_wanted[-3:-1]==teacher_num[1:3]:
                             print("\n\n已找到\n")
                             finded = True
+                            Turn=1
+                            elected=False
+                            while not elected:
+                                print("第"+str(Turn)+"次尝试")
+                                Turn=Turn+1
+                                tl.find_element_by_xpath(
+                                    './/*[@class="el-row"]/button[2]').click()
+                                try:
+                                    driver.find_element_by_xpath(
+                                        '/html/body/div[3]/div/div[3]/button[2]').click()
+                                except Exception as eEle:
+                                    elected=True
+                                time.sleep(2)
+                                os.system('cls')
+                            os.system('cls')
+                            print("\n已成功选上！\n")
                             break
                     break
             if not finded:
@@ -259,6 +276,22 @@ def main():
                         if class_wanted[-3:-1]==teacher_num[1:3]:
                             print("\n\n已找到\n")
                             finded = True
+                            Turn=1
+                            elected=False
+                            while not elected:
+                                print("第"+str(Turn)+"次尝试")
+                                Turn=Turn+1
+                                tl.find_element_by_xpath(
+                                    './/*[@class="el-row"]/button[2]').click()
+                                try:
+                                    driver.find_element_by_xpath(
+                                        '/html/body/div[3]/div/div[3]/button[2]').click()
+                                except Exception as eEle:
+                                    elected=True
+                                time.sleep(2)
+                                os.system('cls')
+                            os.system('cls')
+                            print("\n已成功选上！\n")
                             break
                     break
             if not finded:
@@ -317,6 +350,22 @@ def main():
                 if class_wanted == class_num:
                     print("\n\n已找到\n")
                     finded = True
+                    Turn=1
+                    elected=False
+                    while not elected:
+                        print("第"+str(Turn)+"次尝试")
+                        Turn=Turn+1
+                        tl.find_element_by_xpath(
+                            './/*[@class="el-row"]/button[3]').click()
+                        try:
+                            driver.find_element_by_xpath(
+                                '/html/body/div[3]/div/div[3]/button[2]').click()
+                        except Exception as eEle:
+                            elected=True
+                        time.sleep(2)
+                        os.system('cls')
+                    os.system('cls')
+                    print("\n已成功选上！\n")
                     break
             if not finded:
                 curpages = curpages+1
@@ -339,8 +388,7 @@ def main():
         return
 
     except Exception as e:
-        msg += '选课失败' + '\n\n' + str(e) + '\n\n'
-        print('\t选课失败' + '\n' + str(e))
+        print('\t选课中止' + '\n' + str(e))
         error = True
         # driver.quit()
         return
