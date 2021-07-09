@@ -160,7 +160,7 @@ def main():
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(1.5)
+                                time.sleep(2)
                                 
                             
                             print("\nelected!\n")
@@ -234,7 +234,7 @@ def main():
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(1.5)
+                                time.sleep(2)
                                 
                             
                             print("\nelected!\n")
@@ -308,7 +308,7 @@ def main():
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(1.5)
+                                time.sleep(2)
                                 
                             
                             print("\nelected!\n")
@@ -375,7 +375,7 @@ def main():
                             break
                         driver.find_element_by_xpath(
                             '/html/body/div[3]/div/div[3]/button[2]').click()
-                        time.sleep(1.5)
+                        time.sleep(2)
                                 
                         
                     
