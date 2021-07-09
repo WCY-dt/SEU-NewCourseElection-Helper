@@ -159,7 +159,7 @@ def main():
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(3)
+                                time.sleep(4)
                                 
                             
                             print("\nelected!\n")
@@ -232,7 +232,7 @@ def main():
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(3)
+                                time.sleep(4)
                                 
                             
                             print("\nelected!\n")
@@ -298,7 +298,7 @@ def main():
                             break
                         driver.find_element_by_xpath(
                             '/html/body/div[3]/div/div[3]/button[2]').click()
-                        time.sleep(3)
+                        time.sleep(4)
                                 
                         
                     
@@ -350,7 +350,6 @@ if __name__ == '__main__':
     else:
         sys.exit()
 
-    time.sleep(10)
     error = False
     Login()
     if not error:
