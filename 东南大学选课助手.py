@@ -155,14 +155,12 @@ def main():
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
                                 time.sleep(2)
-                                print("checking.")
                                 if not (driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？"):
                                     elected=True
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
                                 time.sleep(2)
-                                print("electing.")
                                 
                             
                             print("\nelected!\n")
