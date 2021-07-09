@@ -154,13 +154,87 @@ def main():
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
-                                time.sleep(2)
+                                time.sleep(0.5)
                                 if not (driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？"):
                                     elected=True
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(2)
+                                time.sleep(1.5)
+                                
+                            
+                            print("\nelected!\n")
+                            break
+                    break
+            if not finded:
+                curpages = curpages+1
+                driver.find_element_by_xpath(
+                    '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys(Keys.BACKSPACE)
+                driver.find_element_by_xpath(
+                    '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys(Keys.BACKSPACE)
+                driver.find_element_by_xpath(
+                    '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys('%d' %curpages)
+                driver.find_element_by_xpath(
+                    '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[1]').click()
+                time.sleep(1)
+                print(".", end="")
+                pages = driver.find_element_by_class_name('number.active').text
+        
+        driver.find_element_by_xpath('//*[@id="xsxkapp"]/div/div[1]/ul/li[1]/i').click()
+        time.sleep(0.5)
+        print(".", end="")
+        driver.find_element_by_xpath('//*[@id="xsxkapp"]/div/div[1]/ul/li[4]').click()
+        time.sleep(1)
+        print(".", end="")
+
+        curpages = 1
+
+        driver.find_element_by_xpath(
+            '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys(Keys.BACKSPACE)
+        driver.find_element_by_xpath(
+            '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys(Keys.BACKSPACE)
+        driver.find_element_by_xpath(
+            '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[2]/div/input').send_keys(str(curpages))
+        driver.find_element_by_xpath(
+            '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[2]/span[1]').click()
+        time.sleep(1)
+        print(".", end="")
+        pages = driver.find_element_by_class_name('number.active').text
+
+        while str(pages) == str(curpages) and not finded:
+            class_list = driver.find_elements_by_xpath(
+                '//*[@id="xsxkapp"]/div/div[3]/div[3]/div/div[1]/div')
+            for cl in class_list:
+                class_num = cl.find_element_by_xpath(
+                    './/*[@class="el-card__body"]/div[2]/div/div[2]/span').text
+                print(".", end="")
+                if class_wanted[0:-5] == class_num:
+                    cl.click()
+                    time.sleep(0.2)
+                    print(".", end="")
+                    teacher_list=cl.find_elements_by_xpath(
+                        './/*[@class="card-list course-jxb el-row"]/div')
+                    for tl in teacher_list:
+                        print(".", end="")
+                        teacher_num=tl.find_element_by_xpath(
+                            './/*[@class="card-item head"]/div[1]/span[1]').text
+                        if class_wanted[-3:-1]==teacher_num[1:3]:
+                            print("\n\nfinded\n")
+                            finded = True
+                            Turn=1
+                            elected=False
+                            while not elected:
+                                print("the "+str(Turn)+" trail")
+                                Turn=Turn+1
+                                tl.find_element_by_xpath(
+                                    './/*[@class="el-row"]/button[2]').click()
+                                time.sleep(0.5)
+                                if not (driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？"):
+                                    elected=True
+                                    break
+                                driver.find_element_by_xpath(
+                                    '/html/body/div[3]/div/div[3]/button[2]').click()
+                                time.sleep(1.5)
                                 
                             
                             print("\nelected!\n")
@@ -228,13 +302,13 @@ def main():
                                 Turn=Turn+1
                                 tl.find_element_by_xpath(
                                     './/*[@class="el-row"]/button[2]').click()
-                                time.sleep(2)
+                                time.sleep(0.5)
                                 if not (driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？"):
                                     elected=True
                                     break
                                 driver.find_element_by_xpath(
                                     '/html/body/div[3]/div/div[3]/button[2]').click()
-                                time.sleep(2)
+                                time.sleep(1.5)
                                 
                             
                             print("\nelected!\n")
@@ -295,13 +369,13 @@ def main():
                         Turn=Turn+1
                         tl.find_element_by_xpath(
                             './/*[@class="el-row"]/button[3]').click()
-                        time.sleep(2)
+                        time.sleep(0.5)
                         if not (driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/div[2]/p').text=="确认选择课程吗？"):
                             elected=True
                             break
                         driver.find_element_by_xpath(
                             '/html/body/div[3]/div/div[3]/button[2]').click()
-                        time.sleep(2)
+                        time.sleep(1.5)
                                 
                         
                     
