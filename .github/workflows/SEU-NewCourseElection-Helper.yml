@@ -1,7 +1,10 @@
 name: SEU-NewCourseElection-Helper
 on:
+  schedule:
+    - cron: '00 * * * *'
   watch:
     types: started
+  workflow_dispatch: 
 
 jobs:
   Grab:
