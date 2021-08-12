@@ -1,3 +1,5 @@
+# 请暂时不要使用！发现了一点bug没改
+
 # SEU-NewCourseElection-Helper
 
 ![Stars](https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg)
