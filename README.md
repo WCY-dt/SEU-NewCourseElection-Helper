@@ -64,6 +64,8 @@ SEU-NewCourseElection-Helper
 
 4. 点击右上角的 ⭐star，即可自动运行。
 
+  > 如果没有自动运行，去 Actions 里面手动点一下运行。
+
    按照目前设置，如果不出问题，可以一直不停跑下去。如果出现故障，脚本会每隔一小时自检查一次，确保持续不断运行。
 
 ## 脚本说明
@@ -77,6 +79,14 @@ SEU-NewCourseElection-Helper
 
 <p align="center"><img src="https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg" width="600"/></p>
 
+### Stargazers: 
+
+<a href="https://github.com/WCY-dt/SEU-NewCourseElection-Helper/stargazers"><p align="center"><img src="https://reporoster.com/stars/notext/WCY-dt/SEU-NewCourseElection-Helper" width="400"/></p></a>
+
+### Forkers: 
+
+<a href="https://github.com/WCY-dt/SEU-NewCourseElection-Helper/network/members"><p align="center"><img src="https://reporoster.com/forks/notext/WCY-dt/SEU-NewCourseElection-Helper" width="400"/></p></a>
+
 ## 贡献者
 
-<a href="https://github.com/WCY-dt"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" style="border-radius:34;"></a>
+<a href="https://github.com/WCY-dt"><p align="center"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" style="border-radius:34;"></p></a>
