@@ -75,8 +75,8 @@ SEU-NewCourseElection-Helper
 
 ## star 数目统计
 
-![Stargazers over time](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg)
+<p align="center"><img src="https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg" width="600"/></p>
 
 ## 贡献者
 
-<a href="[WCY-dt (Chenyang) (github.com)](https://github.com/WCY-dt)"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" style="border-radius:34;"></a>
+<a href="https://github.com/WCY-dt"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" style="border-radius:34;"></a>
