@@ -1,9 +1,12 @@
+<img src="pic/logo.png" alt="logo" style="zoom: 33%;" />
+
+![Stars](https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg) ![Forks](https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg)
+
+---
+
 # 新增功能：全自动抢课！彻底解放双手！
 
 # SEU-NewCourseElection-Helper
-
-![Stars](https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg)
-![Forks](https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg)
 
 脚本共有两个版本
 
@@ -71,3 +74,6 @@
 
 [![Stargazers over time](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg)](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper)
 
+## 贡献者
+
+<a href="[WCY-dt (Chenyang) (github.com)](https://github.com/WCY-dt)"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" ></a>
