@@ -1,21 +1,24 @@
-<img src="pic/logo.png" alt="logo" style="zoom: 33%;" />
+<p align="center"><img src="pic/logo.png" alt="logo" width="400"/></p>
 
-![Stars](https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg) ![Forks](https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg)
+<br/>
 
----
+<p align="center"><img src="https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/badge/Test-passed-brightgreen.svg?style=flat"> <img src="https://img.shields.io/badge/version-1.0.2-red.svg?style=flat"> <img src="https://img.shields.io/badge/License-GPL3.0-yellow.svg?style=flat"></p>   
 
-# 新增功能：全自动抢课！彻底解放双手！
+<h1 align="center" style="text-align:center;">
+SEU-NewCourseElection-Helper
+</h1>
 
-# SEU-NewCourseElection-Helper
+
+<h3 align="center" style="text-align:center;">新增功能：全自动抢课！彻底解放双手！</h3>
 
 脚本共有两个版本
 
-- 在线版（利用GitHub workflow）
-- ~~离线版（请点击右侧Releases下载）~~已停止开发
+- **在线版**（利用GitHub workflow）
+- *离线版已停止开发*
 
-离线版由于系统兼容性问题，目前已停止使用与开发。
+> 离线版由于系统兼容性问题，目前已停止使用与开发。
 
-脚本仍在改进中，且只经过我自己的账号测试无误，可能会有亿点点bug。欢迎提交issues报告问题。
+脚本仍在改进中，可能会有亿点点bug。欢迎提交issues报告问题。
 
 > 因为网络延迟问题，目前脚本已降速，大约每分钟刷30次
 
@@ -72,8 +75,8 @@
 
 ## star 数目统计
 
-[![Stargazers over time](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg)](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper)
+![Stargazers over time](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg)
 
 ## 贡献者
 
-<a href="[WCY-dt (Chenyang) (github.com)](https://github.com/WCY-dt)"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" ></a>
+<a href="[WCY-dt (Chenyang) (github.com)](https://github.com/WCY-dt)"><img src="https://avatars.githubusercontent.com/u/55525165?v=4" height="68" width="68" style="border-radius:34;"></a>
