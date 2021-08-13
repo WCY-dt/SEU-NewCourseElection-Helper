@@ -65,3 +65,9 @@
 1. 利用selenium模拟选课。由于选课系统只允许同时登录一个设备，所以多线程有点难搞。
 2. 验证码识别没有做，因为我不可能在GitHub服务器上训练一个模型。我的解决方法是直接输入0，试到成功为止。据我统计，正常情况20次以内就能试出来了。
 3. 在线版的脚本没有注释，这是因为一开始放GitHub上运行时不停提示我字符集错误，一气之下就把所有中文都删了。但[东南大学选课助手_offline.py](https://github.com/Auroragys/SEU-NewCourseElection-Helper/blob/main/东南大学选课助手_offline.py)是有注释的，可以对照查看。
+
+
+## star 数目统计
+
+[![Stargazers over time](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg)](https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper)
+
