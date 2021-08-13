@@ -84,7 +84,7 @@ def Login():
         checkUrl = driver.current_url
         print("\n"+checkUrl+"\n")
         if not checkUrl.startswith("http://newxk.urp.seu.edu.cn/xsxk/elective/"):
-            print(username + '\t' + password + '\tlogin fail')
+            print(username + '\tlogin fail')
             error = True
             return
         
