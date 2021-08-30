@@ -2,7 +2,9 @@
 
 <br/>
 
-<p align="center"><img src="https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/badge/Test-passed-brightgreen.svg?style=flat"> <img src="https://img.shields.io/badge/version-1.0.2-red.svg?style=flat"> <img src="https://img.shields.io/badge/License-GPL3.0-yellow.svg?style=flat"></p>   
+<p align="center"><img src="https://img.shields.io/github/stars/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/github/forks/wcy-dt/SEU-NewCourseElection-Helper.svg"> <img src="https://img.shields.io/badge/Test-passed-brightgreen.svg?style=flat"> <img src="https://img.shields.io/badge/version-1.0.2-red.svg?style=flat"> <img src="https://img.shields.io/badge/License-GPL3.0-yellow.svg?style=flat"> <img src="https://gpvc.arturio.dev/wcy-dt"></p>
+
+<p align="center"><img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103"></p>
 
 <h1 align="center" style="text-align:center;">
 SEU-NewCourseElection-Helper
@@ -78,6 +80,8 @@ SEU-NewCourseElection-Helper
 ## star 数目统计
 
 <p align="center"><img src="https://starchart.cc/WCY-dt/SEU-NewCourseElection-Helper.svg" width="600"/></p>
+
+[![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=Naereen/badges)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=WCY-dt/SEU-NewCourseElection-Helper)
 
 ### Stargazers: 
 
