@@ -11,7 +11,7 @@ SEU-NewCourseElection-Helper
 </h1>
 
 
-<h3 align="center" style="text-align:center;">🔊 新增功能：全自动抢课！彻底解放双手！</h3>
+<h3 align="center" style="text-align:center;">🔊 特别注意：由于作者已经多年没有抢课需求，故本脚本已经大概率不可用了。</h3>
 
 脚本共有两个版本
 
